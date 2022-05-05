@@ -22,7 +22,6 @@ class Phonebook extends Component {
   render() {
     return (
       <div>
-        <h2>Phonebook</h2>
         <form className={s.form} onSubmit={this.handleSubmit}>
           <label className={s.label}>
             Name

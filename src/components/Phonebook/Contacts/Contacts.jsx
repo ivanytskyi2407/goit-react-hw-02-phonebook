@@ -3,7 +3,6 @@
 const Contacts = ({ contacts }) => {
   return (
     <div>
-      <h2>Contacts</h2>
       {contacts.map(contact => {
         return (
           <li key={contact.id}>
