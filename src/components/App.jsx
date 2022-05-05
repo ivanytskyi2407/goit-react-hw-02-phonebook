@@ -42,6 +42,13 @@ export class App extends Component {
     );
     return filter;
   };
+  removeContact = contactId => {
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+      };
+    });
+  };
 
   render() {
     return (
@@ -50,7 +57,10 @@ export class App extends Component {
         <Phonebook onSubmit={this.addContact} />
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <h2>Contacts</h2>
-        <Contacts contacts={this.filterContacts()} />
+        <Contacts
+          contacts={this.filterContacts()}
+          onRemoveContact={this.removeContact}
+        />
       </div>
     );
   }
