@@ -1,7 +1,8 @@
+import s from './Filter.module.css';
 const Filter = ({ value, onChange }) => {
   return (
-    <label htmlFor="">
-      Find contacts by name
+    <label className={s.label} htmlFor="">
+      <p>Find contacts by name</p>
       <input type="text" value={value} onChange={onChange} />
     </label>
   );

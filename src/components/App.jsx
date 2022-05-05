@@ -16,6 +16,12 @@ export class App extends Component {
   };
 
   addContact = ({ name, number }) => {
+    const noUniqueName = this.state.contacts
+      .map(e => e.name.toLowerCase())
+      .includes(name.toLowerCase());
+    if (noUniqueName) {
+      return alert(`${name} is already in contacts`);
+    }
     const contact = {
       id: nanoid(),
       name: name,
